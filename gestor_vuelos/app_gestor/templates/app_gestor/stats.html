@@ -1,0 +1,16 @@
+{% extends 'app_gestor/base.html' %}
+{% block content %}
+<h2>Estadísticas de Vuelos</h2>
+
+<ul>
+  <li>Vuelos Nacionales: {{ stats.nacionales }}</li>
+  <li>Vuelos Internacionales: {{ stats.internacionales }}</li>
+  <li>Promedio precio de vuelos Nacionales: 
+    {% if stats.promedio_nacional %}
+      ${{ stats.promedio_nacional|floatformat:2 }}
+    {% else %}
+      No hay vuelos nacionales registrados
+    {% endif %}
+  </li>
+</ul>
+{% endblock %}

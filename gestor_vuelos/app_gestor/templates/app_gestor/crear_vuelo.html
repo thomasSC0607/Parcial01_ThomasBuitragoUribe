@@ -1,0 +1,9 @@
+{% extends 'app_gestor/base.html' %}
+{% block content %}
+<h2>Registrar Vuelo</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Registrar</button>
+</form>
+{% endblock %}

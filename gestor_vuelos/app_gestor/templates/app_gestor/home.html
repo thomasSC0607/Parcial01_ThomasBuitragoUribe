@@ -1,0 +1,9 @@
+{% extends 'app_gestor/base.html' %}
+{% block content %}
+<h2>Bienvenido al sistema de vuelos</h2>
+<ul>
+  <li><a href="{% url 'flight-create' %}">Registrar vuelos</a></li>
+  <li><a href="{% url 'flight-list' %}">Listar vuelos</a></li>
+  <li><a href="{% url 'flight-stats' %}">Estadísticas de vuelos</a></li>
+</ul>
+{% endblock %}

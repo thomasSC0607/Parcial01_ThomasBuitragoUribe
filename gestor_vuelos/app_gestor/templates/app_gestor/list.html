@@ -1,0 +1,37 @@
+{% extends 'app_gestor/base.html' %}
+{% block content %}
+<h2>Listado de Vuelos</h2>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Tipo</th>
+    <th>Precio</th>
+  </tr>
+  {% for flight in flights %}
+  <tr>
+    <td>{{ flight.id }}</td>
+
+    <td>
+      {% if flight.tipo == "Internacional" %}
+        <strong>{{ flight.nombre }}</strong>
+      {% else %}
+        {{ flight.nombre }}
+      {% endif %}
+    </td>
+
+    <td>{{ flight.tipo }}</td>
+
+    <td>
+      {% if flight.tipo == "Nacional" %}
+        <span style="color:blue;">${{ flight.precio }}</span>
+      {% else %}
+        ${{ flight.precio }}
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
